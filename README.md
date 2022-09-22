@@ -11,13 +11,13 @@ In this exercise you should be able to:
 
 ## Description
 
-Given a set of N puppies (numbered 0, 1, 2, ..., N - 1), we would like to split them into two groups of any size to use two play areas.
+Given a set of N puppies, we would like to split them into two groups of any size to use two play areas.
 
 Some dogs have a history of fighting with specific other dogs and shouldn't be put into the same play area.
 
-Formally, if dislikes[i] = [a, b], it means dog i is not allowed to put in the same group as dog a or dog b.
+Formally, if `dislikes[i] = [a, b]`, it means dog `i` is not allowed to put in the same group as dog `a` or dog `b`.
 
-Return true if and only if it is possible to split the dogs into two groups where no fighting will occur.
+Return `True` if and only if it is possible to split the dogs into two groups where no fighting will occur. Otherwise, return `False`
 
 ### Example 1
 
