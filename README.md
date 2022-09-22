@@ -17,51 +17,51 @@ Some dogs have a history of fighting with specific other dogs and shouldn't be p
 
 Formally, if `dislikes[i] = [a, b]`, it means dog `i` is not allowed to put in the same group as dog `a` or dog `b`.
 
-Return `True` if and only if it is possible to split the dogs into two groups where no fighting will occur. Otherwise, return `False`
+Dislike is mutual. If dog `a` that dislikes dog `b`, dog `b` also dislikes dog `a`. 
+
+Return `True` if and only if it is possible to split the dogs into two groups where no fighting will occur. Otherwise, return `False`.
 
 ### Example 1
-
+*Input*:
+``` python
+dislikes = { 
+            "Fido": [],
+            "Nala": ["Cooper", "Spot"],
+            "Cooper": ["Nala", "Bruno"],
+            "Spot": ["Nala"],
+            "Bruno": ["Cooper"]
+            }
 ```
-Input: dislikes = [ [],
-                    [2, 3],
-                    [1, 4],
-                    [1],
-                    [2]
-                  ]
-Output: true
-```
-
-Explanation: group1 [0, 1, 4], group2 [2, 3]
+*Output*: `True`
+Explanation: group1: `["Fido", "Nala", "Bruno"]`, group2: `["Cooper", "Spot"]`
 
 ### Example 2
-
+*Input*:
+```python
+dislikes = {
+            "Fido": [],
+            "Nala": ["Cooper", "Spot"],
+            "Coooper": ["Nala", "Spot"],
+            "Spot": ["Nala", "Cooper"]
+            }
 ```
-Input: dislikes = [ [],
-                    [2, 3],
-                    [1, 3],
-                    [1, 2]
-                  ]
-Output: false
-```
-
-Explanation: All the nodes 1-3 are interconnected and so there is no way to split them up.
+*Output*: `False`
+Explanation: The nodes `Nala`, `Cooper`, and `Spot` are interconnected and so there is no way to split them up.
 
 ### Example 3
-
+*Input*: 
+```Python
+dislikes = { 
+            "Fido": [],
+            "Nala": ["Cooper", "Cali"],
+            "Cooper": ["Nala", "Spot"],
+            "Spot": ["Cooper", "Bruno"],
+            "Bruno": ["Spot", "Cali"],
+            "Cali": ["Nala", "Bruno"]
+            }
 ```
-Input: dislikes = [ [],
-                    [2, 5],
-                    [1, 3],
-                    [2, 4],
-                    [3, 5],
-                    [1, 4]
-                  ]
-Output: false
-```
-
-### Note
-
-The graph is undirected, so if dog 1 dislikes dog 2, then dog 2 also dislikes dog 1.
+*Output*: `False`
+Explanation: There is no way to split `Nala`, `Cooper`, `Spot`, `Bruno`, and `Cali` up into two groups such that they are all separated from the dogs they dislike.
 
 ## Source
 
